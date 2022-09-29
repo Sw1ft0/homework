@@ -1,19 +1,18 @@
 import argparse
 import operator
-
+import math 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('operator')
-    parser.add_argument('first', type=float)
-    parser.add_argument('second', type=float)
+    parser.add_argument('operator', type=str)
+    parser.add_argument('values', nargs="*", type=float)
     args = parser.parse_args()
 
-    try:
-        func = getattr(operator, args.operator)
-    except:
-        print('Wrong function')
+    if hasattr(math, args.operator):
+        res = getattr(math, args.operator)
+    else:
+        res = getattr(operator, args.operator)
 
-    print(func(args.first, args.second))
+    print(res(*args.values))
 
 main()

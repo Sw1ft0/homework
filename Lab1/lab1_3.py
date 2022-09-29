@@ -6,7 +6,7 @@ args = parser.parse_args()
 
 def operate():
     if args.string:
-        signs = ['+', '-']
+        signs = ('+', '-')
         previous_symbol = ''
         is_valid = True
         for symbol in args.string:
