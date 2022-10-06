@@ -12,7 +12,9 @@ def main():
     parser.add_argument('second', type=float)
 
     args = parser.parse_args()
-
-    print(op[args.operator](args.first, args.second))
-
+    if args.operator == "/" and args.second == 0:
+        print("Error!")
+    else:
+        print(op[args.operator](args.first, args.second))
+    
 main()
