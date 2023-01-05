@@ -13,7 +13,7 @@ def main():
 
     args = parser.parse_args()
     if args.operator == "/" and args.second == 0:
-        print("Error!")
+        print("Error! Division by zero is not allowed.")
     else:
         print(op[args.operator](args.first, args.second))
     
